@@ -18,11 +18,24 @@ public:
 
 	~ScopedExit() { handler(); }
 };
+
+// convenient template template
+// => 함수 인자를 통해서 템플릿 타입을 추론하기 위해 사용했던 기술
+template<typename T>
+ScopedExit<T> makeScopedExit(const T& f)
+{
+	return ScopedExit<T>(f);
+}
+
 int main()
 {
 	// C++14..
 	ScopedExit<void(*)()> se1(&cleanup);
 
-	ScopedExit< ? > se2([]() { std::cout << "lambda" << std::endl; });
-
+	// class 템플릿의 타입추론이 안되는 경우 아래 ? 를 채우기가 어렵습니다.
+	// => 이럴때 "convenient function template" 으로 하면 됩니다.
+	//ScopedExit< ? > se2([]() { std::cout << "lambda" << std::endl; });
+	
+	auto se2 = makeScopedExit([]() { std::cout << "lambda" << std::endl; });
 }
+
