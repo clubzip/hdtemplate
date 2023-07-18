@@ -19,7 +19,7 @@ public:
 	~ScopedExit() { handler(); }
 };
 
-// convenient template template
+// convenient function template
 // => 함수 인자를 통해서 템플릿 타입을 추론하기 위해 사용했던 기술
 template<typename T>
 ScopedExit<T> makeScopedExit(const T& f)
