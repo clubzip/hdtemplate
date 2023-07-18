@@ -26,7 +26,6 @@ ScopedExit<T> makeScopedExit(const T& f)
 {
 	return ScopedExit<T>(f);
 }
-
 int main()
 {
 	// C++14..
@@ -37,5 +36,11 @@ int main()
 	//ScopedExit< ? > se2([]() { std::cout << "lambda" << std::endl; });
 	
 	auto se2 = makeScopedExit([]() { std::cout << "lambda" << std::endl; });
-}
 
+	// C++17 이라면 class template 도 타입추론이 되므로
+	// makeScopedExit 없어도 아래 처럼하면 됩니다.
+	ScopedExit se3([]() { std::cout << "lambda" << std::endl; });
+}
+// github.com/webkit
+
+// source/wtf/wtf/ scopedexit.h 에 위 코드와 유사한 코드 있습니다.
