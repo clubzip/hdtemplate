@@ -33,8 +33,20 @@ float f = pi<float>;
 
 
 // 4. using template 
+// => 기존 템플릿에 대한 별명을 만드는 문법
+// => C++11 부터 지원
 template<typename T>
-using MyList = std::list<T>;
+using MyList = std::list<T>; // list 템플릿의 별명 MyList생성
 
-MyList<int> s; 
+MyList<int> s;  // std::list<int> s 와 동일
 
+
+// STL priority_queue 는 템플릿 인자가 3개 입니다.
+std::priority_queue<int, std::list<int>, std::allocator<int>> pq1;
+
+// 만약 위와 같이 사용하는데, 2번째 3번째는 항상 같은 것을 사용한다면
+// 아래 처럼 별명을 만드세요
+template<typename T> 
+using PQUEUE = std::priority_queue<T, std::list<T>, std::allocator<T>>;
+
+PQUEUE<int> pq2;
