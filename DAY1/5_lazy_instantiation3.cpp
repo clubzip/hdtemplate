@@ -48,4 +48,8 @@ int main()
 	std::queue<int, std::list<int> > q2; // list 로 변경
 	std::queue<int, std::vector<int> > q3; // error. vector는
 								// queue 내부 자료구조로 사용할수 없습니다.
+								// 이 자체는 에러가 아니고
+								// q3.pop() 을 할때"vector.pop_back()
+								// 코드가 있는데, 그 부분에서 에러 입니다.
+	q3.pop();
 }
