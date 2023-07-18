@@ -19,8 +19,16 @@ void foo(T obj)
 	Object::type  * p1; // int* p1   즉, * 는 포인터 변수의 선언을 위한 연산자
 	
 
+	// 핵심 2. dependent name(의존 이름) 
+	// => 템플릿 인자 T에 의존해서 꺼내는 이름
+	// => 컴파일러는 "클래스이름::이름" 에서 "이름" 을 무조건 값으로 해석합니다.
 	T::value * 10;	
-	T::type  * p2;
+//	T::type  * p2; // error. type 을 값으로 해석하므로 * 를 곱하기로 해석
+					// p2라는 변수가 없다고 에러!
+
+	// 핵심 3. dependent name 을 값이 아닌 타입으로 해석되게 하려면
+	// => "typename" 을 붙여야 합니다.
+	typename T::type* p2;
 }
 
 
