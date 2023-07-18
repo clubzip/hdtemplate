@@ -38,6 +38,19 @@ void foo()
 	Object<T>::template mf<double>(); // ok.
 						// 클래스 템플릿의 멤버 함수템플릿을 T에 의존해서
 						// 호출하는 모양!
+
+	//------------------------
+	Object<int> o1; // o1은 T에 의존하지 않습니다.
+	Object<T> o2;   // o2은 T에 의존합니다. T에 따라 달라 질수 있습니다.
+
+	// o1, o2 를 사용해서 mf() 호출하는 코드 만들어 보세요
+	// mf 의 템플릿 인자를 <int> 로 해서 전달해 보세요
+	o1.mf<int>();
+	
+//	o2.mf<int>(); // ?? o2 자체가 dependent name 입니다.
+					// mf 의 의미는 T에 따라 달라 질수 있습니다.
+	o2.template mf<int>();
+
 }
 
 int main()
