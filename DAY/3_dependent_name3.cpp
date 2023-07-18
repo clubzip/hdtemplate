@@ -49,7 +49,13 @@ void foo()
 	
 //	o2.mf<int>(); // ?? o2 자체가 dependent name 입니다.
 					// mf 의 의미는 T에 따라 달라 질수 있습니다.
-	o2.template mf<int>();
+
+	o2.template mf<int>(); // 이 코드가 정확한 코드 입니다.
+				// => 그런데, 많은 컴파일러가 template 생략시 되는
+				//    경우도 있고, C++20, 23 에서
+				//    typename, template 을 표기하지 않아도
+				//    되는 경우들이 추가되었습니다.(유연해 졌습니다.)
+	
 
 }
 
