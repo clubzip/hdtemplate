@@ -35,6 +35,6 @@ int main()
 	Point<double> p2 = p1; // int 는 double 에 복사 가능하므로 ok..
 
 	Point<std::string> p3("1", "2");
-//	Point<int> p4 = p3;		// U = std::string,  T = int 인데
+	Point<int> p4 = p3;		// U = std::string,  T = int 인데
 							// std::string -> int 로 복사 될수 없으므로 에러
 }
