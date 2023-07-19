@@ -4,6 +4,11 @@
 // => template 버전과
 // => template 이 아닌 버전(int) 으로 동시 제공 가능합니다
 
+// 사용자가 만든      int square(int) 함수와
+// 템플릿으로 생성된  int square<int>(int) 함수의 
+// => 내부 이름은 다릅니다.!!
+
+
 template<typename T>
 T square(T a)
 {
