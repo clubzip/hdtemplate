@@ -7,6 +7,13 @@
 template<typename T> void f2(T& arg)
 {
 	std::cout << _FNAME_ << std::endl;
+
+	// 주의 !! 이경우 타입 조사시 "RTTI" 기술 사용하지 마세요
+	// => C++ 표준 RTTI 기술은 "const, volatile, reference" 출력이 안됩니다.
+	// => 위처럼 함수 이름 출력해 보거나, godbolt.org 에서 확인하세요
+	// => C++26 부터 "정확하게 조사 가능한 reflection" 도입됩니다.
+//	std::cout << typeid(T).name() << std::endl;
+//	std::cout << typeid(arg).name() << std::endl;
 }
 
 int main()
