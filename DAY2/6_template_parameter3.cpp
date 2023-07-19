@@ -29,7 +29,7 @@ class list
 };
 // std::list<int> s;
 */
-// 따라서, 2번째 템플릿 인자는 "인자가 2개인 테플릿" 모양이어야 합니다.
+// 따라서, 2번째 템플릿 인자는 "인자가 2개인 템플릿" 모양이어야 합니다.
 template<typename T,
 	     template<typename, typename> class C = std::deque >
 class stack
