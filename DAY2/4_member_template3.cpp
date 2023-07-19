@@ -26,11 +26,18 @@ public:
 
 
 	// 3. Generic 생성자 (또는 Generic 복사 생성자 라고도 합니다)
+
 	// U(int)가 T(double)로 복사(대입 될수 있다면)
 	// Point<U> 는 Point<T> 로 복사(대입) 될수 있어야 한다.
+
 	// => Generic 생성자 가 필요 
+	// => "Generic 생성자" 가 결국 "class template" 의 "member function template"
 	template<typename U>
-	Point(const Point<U>& p) {}
+	Point(const Point<U>& p) : x(p.x), y(p.y) {}
+
+	// Point<double>, Point<int> 가 서로 다른 타입 이므로
+	// private 멤버 접근을 위해서 friend 관계가 필요 합니다.
+	template<typename> friend class Point;
 };
 
 
