@@ -43,7 +43,6 @@ public:
 	T& top() { return c.back(); }
 };
 
-
 int main()
 {
 	// C++ 표준은 아래 처럼 사용해야 합니다.
@@ -55,4 +54,6 @@ int main()
 	stack<int, std::vector > s3;
 	s2.push(10);
 }
+// "modern C++ design" 책에서 위와 같은 기술을 많이 볼수 있습니다
+// (2003년에 나온 오래된 책), "안드레이 알렉산드레스큐" 라는 C++업계 최고로 뽑히는 개발자
 
