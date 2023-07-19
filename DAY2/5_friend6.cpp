@@ -52,6 +52,23 @@ struct Object4
 template<typename U>
 void f4(U a) {}
 
+// =================================
+// 5. 1 : 1로 친구가 되게 할수 없을까 ?
+// Object5<int>    <===> f5(int)
+// Object5<double> <===> f5(double)
+// Object5<short>  <===> f5(short)
+
+// => 클래스 템플릿의 friend 함수를 클래스 내부에 직접 만드세요
+// => friend 가 있으므로 내부에 만들어도 멤버 함수는 아닙니다.
+// => 이렇게 하면 1:1의 관계가 됩니다.!
+template<typename T>
+struct Object5
+{
+	friend void f5(T a)
+	{
+
+	}
+};
 
 
 
