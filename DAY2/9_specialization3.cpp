@@ -47,6 +47,12 @@ template<> struct Object<int, short>
 	static void fn() { std::cout << "int, short" << std::endl; }
 };
 
+template<typename T, typename U, typename V > 
+struct Object<T, Object<U, V>>
+{
+	static void fn() { std::cout << "Object<T, Object<U, V>>" << std::endl; }
+};
+
 int main()
 {
 	Object<char, double>::fn();	  // T, U
