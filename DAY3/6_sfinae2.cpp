@@ -15,9 +15,7 @@ typename T::type fn(T  a) { std::cout << " T "; return 0; }
 //						=> int::type 은 잘못된 코드가 됩니다.
 //						=> 즉, 함수 생성 실패!
 
-
 int fn(... ) { std::cout << "..."; return 0; }
-
 
 int main()
 {
