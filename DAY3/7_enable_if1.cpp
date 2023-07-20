@@ -22,5 +22,6 @@ int main()
 									
 	enable_if<false, int>::type n3; // error. ::type 멤버가 없습니다.
 								// 즉, enable_if<false...>::type 은 항상 ::type 이 없음
-								
+
+	// 위에 만든 enable_if 는 이미 C++ 표준에 있습니다.(C++11 표준)
 }
