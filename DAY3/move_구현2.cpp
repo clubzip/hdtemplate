@@ -19,4 +19,7 @@ int main()
 	String s1 = "hello";
 	String s2 = s1; 
 	String s3 = move(s1); 
+
+	// 위처럼 move 를 만들면, 임시객체를 전달할수 없게 됩니다.
+	String s4 = move( String("hello") );
 }
