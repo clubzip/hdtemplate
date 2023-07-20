@@ -28,7 +28,7 @@ public:
 //	template<typename U,
 //	         typename K = std::enable_if_t<조건> > // 조건을 만족하면 디폴트값 void
 												   // 만족하지 못하면 치환 실패. 사용안함
-
+	// 6번소스와 이코드(7번)의 에러 메시지 차이점을 확인해 보세요
 	template<typename U,
 		typename K = std::enable_if_t< std::is_convertible_v<U*, T*> > > 
 
@@ -36,7 +36,6 @@ public:
 
 	template<typename> friend class smart_ptr;
 };
-
 int main()
 {
 	smart_ptr<Dog>    p1(new Dog);
@@ -44,5 +43,8 @@ int main()
 
 	smart_ptr<int> p3 = p1;		// error. Dog* => int* 로 복사 될수 없습니다.						   
 }
-
+// github.com/aosp-mirror  에서
+// platform system code    레포지토리 선택하세요
+// libutils/include/utils/typehelpers.h  열어 보세요
+// copy_type 함수 찾아 보세요.. 
 
