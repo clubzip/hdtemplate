@@ -23,13 +23,11 @@ void printv(const T& value)
 	// => 따라서 T 가 pointer 가 아니면 printv_pointer 템플릿은 사용되지
 	//    않으므로 인스턴스화 되지 않았을것이다!!!
 	// 라는 의도!!! 인데!!
-	if (std::is_pointer_v<T>)
-		printv_pointer(value);
+	if (std::is_pointer_v<T>)		// 컴파일 할때 if ( false )로 결정되어도
+		printv_pointer(value);		// 이 함수 템플릿은 instance 화 됩니다.
 	else
 		printv_not_pointer(value);
 }
-
-
 int main()
 {
 	int n = 10;
