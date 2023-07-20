@@ -1,11 +1,11 @@
-// printv2.cpp - enable_if5 º¹»çÇÏ¼¼¿ä
+// printv2.cpp - enable_if5 ë³µì‚¬í•˜ì„¸ìš”
 
 #include <iostream>
 #include <type_traits> 
 
-// printv ±¸Çö ¹æ¹ı 2.
+// printv êµ¬í˜„ ë°©ë²• 2.
 // => C++11 
-// => std::enable_if ¿Í SFINAE °³³ä »ç¿ë
+// => std::enable_if ì™€ SFINAE ê°œë… ì‚¬ìš©
 
 template<typename T>
 std::enable_if_t< std::is_pointer_v<T> >   
