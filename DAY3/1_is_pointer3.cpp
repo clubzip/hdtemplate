@@ -22,31 +22,24 @@
 
 template<typename T> struct is_array
 {
-
+	static constexpr int size = -1;
 	static constexpr bool value = false;
 };
-
 // primary template 의 템플릿 인자가 한개라도
 // 부분 특수화 버전에서는 인자의 갯수는 변경될수 있다!!
 // 어제 예제 : Object<T, Object<U, V>>
 template<typename T, int N> struct is_array<T[N]>
 {
-
+	static constexpr int size = N;
 	static constexpr bool value = true;
 };
-
-
-
-
-
-
-
 
 template<typename T> 
 void fn(T& arg)
 {	
+	// T : int[3]
 	if ( is_array<T>::value )
-		std::cout << "array" << std::endl;
+		std::cout << "array, size = "  << is_array<T>::size << std::endl;
 	else
 		std::cout << "not array" << std::endl;
 }
