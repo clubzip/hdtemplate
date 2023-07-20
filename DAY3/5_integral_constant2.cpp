@@ -1,5 +1,6 @@
 #include <iostream>
 
+/*
 template<typename T, T N>
 struct integral_constant
 {
@@ -14,6 +15,9 @@ template<typename T> struct is_pointer     : false_type {};
 template<typename T> struct is_pointer<T*> : true_type {};//value=true 가 있어야하지 않나요 ?
 										// : integral_constant<bool, true> 이고
 										//	  ^ 이 안에 value = N 이 있습니다.
+*/
+#include <type_traits> // 이 헤더 안에 위 코드가 있습니다
+
 //--------------------------------------------------------
 template<typename T>
 void printv_imp(const T& value, std::true_type )
