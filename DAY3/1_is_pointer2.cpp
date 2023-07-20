@@ -1,12 +1,16 @@
 #include <iostream>
 
 // 아래 코드가 T 가 포인터 인지 조사하는 기술 입니다.
-template<typename T>
-struct is_pointer
+
+template<typename T> struct is_pointer
 {
 	enum { value = false };
 };
 
+template<typename T> struct is_pointer<T*>
+{
+	enum { value = true };
+};
 
 template<typename T> 
 void fn(const T& arg)
@@ -17,6 +21,7 @@ void fn(const T& arg)
 	else
 		std::cout << "not pointer" << std::endl;
 }
+
 
 int main()
 {
