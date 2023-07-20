@@ -11,6 +11,10 @@
 // 아래 코드 외우세요
 std::enable_if_t< 조건, 리턴 타입 > 
 
+// => 리턴 타입이 void 라면 아래처럼 사용해도 됩니다.
+std::enable_if_t< 조건 >    // typename T=void 가 있기 때문에
+
+
 
 
 template<typename T>
