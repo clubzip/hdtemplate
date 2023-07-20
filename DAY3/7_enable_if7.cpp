@@ -44,7 +44,7 @@ int main()
 	smart_ptr<int> p3 = p1;		// error. Dog* => int* 로 복사 될수 없습니다.						   
 }
 // github.com/aosp-mirror  에서
-// platform system code    레포지토리 선택하세요
+// platform system core    레포지토리 선택하세요
 // libutils/include/utils/typehelpers.h  열어 보세요
 // copy_type 함수 찾아 보세요.. 
 
