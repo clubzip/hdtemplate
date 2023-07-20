@@ -5,8 +5,10 @@
 
 
 template<typename T>
-void fn(T& arg)
-{
+void fn(T& arg) // T : int[3][2]
+//void fn(T arg)	// 주의!! 값(T) 으로 받으면 배열 전달시 포인터로 받게됩니다.
+{				// T : int*
+
 	// 배열인지 조사하는 방법
 	bool b = std::is_array<T>::value;
 
