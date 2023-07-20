@@ -27,6 +27,7 @@ template<typename T> struct is_array
 };
 // primary template 의 템플릿 인자가 한개라도
 // 부분 특수화 버전에서는 인자의 갯수는 변경될수 있다!!
+// 단, 사용자는 primary 버전의 모양으로 사용해야 합니다.
 // 어제 예제 : Object<T, Object<U, V>>
 template<typename T, int N> struct is_array<T[N]>
 {
