@@ -1,11 +1,11 @@
-// if_constexpr 3¹ø º¹»çÇÏ¼¼¿ä
+// if_constexpr 3ë²ˆ ë³µì‚¬í•˜ì„¸ìš”
 
 #include <iostream>
 #include <type_traits>
 
-// printv ±¸Çö 3.
+// printv êµ¬í˜„ 3.
 // => C++17 
-// => if constexpr »ç¿ë
+// => if constexpr ì‚¬ìš©
 
 template<typename T>
 void printv(const T& value)
