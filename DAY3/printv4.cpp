@@ -1,9 +1,9 @@
 #include <iostream>
 #include <type_traits> 
 
-// printv ±¸Çö ¹æ¹ý 4.
+// printv êµ¬í˜„ ë°©ë²• 4.
 // => C++20
-// => requires clauses(Àý) »ç¿ë
+// => requires clauses(ì ˆ) ì‚¬ìš©
 
 template<typename T> requires std::is_pointer_v<T>
 void printv(const T& value)
