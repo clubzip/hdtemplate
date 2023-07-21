@@ -22,4 +22,8 @@ int main()
 // 이외에도 "구글에서 C++ fold expression example" 하면
 // 많은 좋은 예제들을 볼수 있습니다.
 
+// 참고로, fold 는 C++ 뿐 아니라
+// C#, java, python 등에서도 볼수 있습니다.
+// => fold는 원래, 함수형 언어에서 널리 사용하던 기술입니다.
+
 
