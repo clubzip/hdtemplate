@@ -19,9 +19,6 @@ struct tuple<T, Types...>
 
 	static constexpr int N = 1;
 };
-
-
-
 int main()
 {
 	tuple<> t0;
