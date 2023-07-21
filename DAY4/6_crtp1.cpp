@@ -1,5 +1,10 @@
 #include <iostream>
 
+// CRTP : Curiously Recurring Template Pattern
+// => 기반 클래스가 템플릿 인자로 파생 클래스의 이름을 전달 받아서
+//    다양하게 활용하는 기술
+// => template 을 사용한 기법중.. 아주 널리 사용되는 기술.
+
 template<typename T>
 class Base
 {
