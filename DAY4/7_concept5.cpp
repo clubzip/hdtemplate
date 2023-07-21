@@ -9,7 +9,6 @@ template<typename IT, typename T>
 IT find(IT first, IT last,  T value)
 {
 	std::cout << "값 버전" << std::endl;
-
 	return first;
 }
 
