@@ -14,21 +14,28 @@ int f(int a, double b)
 
 //---------------------------------------------
 
-template<typename T> struct result
+template<int N, typename T> struct argument
 {
 	using type = T;
 };
 
-template<typename R, typename ... ARGS >
-struct result< R(ARGS...) >
+// 핵심 : 원하는 정보(함수의 인자 타입)을 얻을수 있도록 부분 특수화 하는 것이
+//        핵심 입니다.
+
+template<int N, typename R, typename ... ARGS> 
+struct argument< N, R(ARGS...)>
 {
-	using type = R;
+	// 여기에서 T 타입의 함수에서 N 번째 타입을 구할수 있을까요 ?
+	using type = ?;
 };
+
+
 
 template<typename T> void foo(T& a)
 {
 	// T : int(int, double) 입니다.
-	typename result<T>::type n;  
+	typename argument<0, T>::type n;  // int
+
 	std::cout << typeid(n).name() << std::endl;
 }
 
