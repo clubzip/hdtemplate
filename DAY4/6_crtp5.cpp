@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 
-// Thin Template 기술
+// Thin Template 기술 - C++ IDioms 사이트에서 참고해 보세요
+// 
 // => 클래스 템플릿 안에.. 템플릿 인자 T를 사용하지 않은 멤버가 있다면
 // => 템플릿이 아닌 기반 클래스를 만들어서 제공합니다.
 
