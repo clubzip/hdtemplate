@@ -31,7 +31,10 @@ void show(Types... args)
 
 	// printv(E1), ( printv(E2) , (printv(E3) , (printv(E4)))))
 }
-
+// sizeof...(args)가 가능한 원리가 무엇일까요 ?
+// => sizeof 는 함수가 아닌 컴파일러가 인식하는 키워드 입니다.
+// => 컴파일러는 args에 몇개가 있는지 알고 있습니다.
+// => 즉, sizeof...(args) ===> 컴파일 시간에 "3" 처럼 바로 변경됩니다.
 
 int main()
 {
