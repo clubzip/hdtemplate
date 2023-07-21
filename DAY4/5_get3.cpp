@@ -3,10 +3,7 @@
 
 
 // 1. primary template
-template<int N, typename T> struct tuple_element
-{
-	using type = T;
-};
+template<int N, typename T> struct tuple_element;
 
 // 2. N == 0 일때, 0번째 요소의 타입을 구할수 있도록 부분 특수화가 핵심!
 template<typename T, typename ... Types> 
@@ -20,7 +17,7 @@ struct tuple_element<0, tuple<T, Types...> >
 template<int N, typename T, typename ... Types>
 struct tuple_element<N, tuple<T, Types...> >
 {
-	using type = typename tuple_element<N-1, tuple<Types...>>::type
+	using type = typename tuple_element<N - 1, tuple<Types...>>::type;
 };
 
 
