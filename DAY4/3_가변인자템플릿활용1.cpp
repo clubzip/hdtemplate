@@ -24,23 +24,32 @@ template<typename T> struct result
 
 // 2. 핵심.. 원하는 타입을 얻을수 있도록 부분 특수화 버전을 만듭니다.
 // => 이부분이 핵심
-template<typename R, typename A1, typename A2> struct result< R(A1, A2) >
+/*
+template<typename R, typename A1, typename A2>
+struct result< R(A1, A2) >
 {
 	using type = R;
 };
+*/
 
-
-
+// 그런데, 위처럼 만들면 "인자가 2개"인 함수만 사용가능합니다.
+// 아래 처럼 가변인자 템플릿으로 하면 "인자의 갯수에 상관없이" 
+// 반환 타입 구할수 있습니다.
+template<typename R, typename ... ARGS >
+struct result< R(ARGS...) >
+{
+	using type = R;
+};
 
 template<typename T> void foo(T& a) 
 {
 	// T : int(int, double) 입니다.
 	typename result<T>::type n;  // int
-
 	std::cout << typeid(n).name() << std::endl;  
 }
 
 int main()
 {
-	foo(f);
+	foo(f);	   // 인자는 2개, 반환 타입 int
+	foo(main); // 인자는 없고, 반환 타입은 int
 }
