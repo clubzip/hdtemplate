@@ -44,7 +44,7 @@ struct result< R(ARGS...) >
 template<typename T> void foo(T& a) 
 {
 	// T : int(int, double) 입니다.
-	typename result<T>::type n;  // int
+	typename  :type n;  // int
 	std::cout << typeid(n).name() << std::endl;  
 }
 
